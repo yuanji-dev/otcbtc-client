@@ -7,6 +7,7 @@ from otcbtc_client.ticker import Ticker
 from otcbtc_client.timestamp import Timestamp
 from otcbtc_client.trade import Trade
 from otcbtc_client.user import User
+from otcbtc_client.order import Order
 
 
 class OTCBTCClient(object):
@@ -42,3 +43,7 @@ class OTCBTCClient(object):
     @property
     def user(self):
         return User(self.api_key, self.api_secret)
+
+    @property
+    def order(self):
+        return Order(self.api_key, self.api_secret)

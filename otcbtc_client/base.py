@@ -11,7 +11,7 @@ class OTCBTCAPIBase(object):
     API_ENDPOINT = 'https://bb.otcbtc.com'
 
     def __init__(self, api_key='', api_secret=''):
-        self.access_token = api_key
+        self.access_key = api_key
         self.api_secret = api_secret
 
     def build_url(self, uri):
@@ -29,4 +29,8 @@ class OTCBTCAPIBase(object):
 
     def get(self, uri, params=None, **kwargs):
         r = requests.get(self.build_url(uri), params=params, **kwargs)
+        return r.json()
+
+    def post(self, uri, params=None, **kwargs):
+        r = requests.post(self.build_url(uri), params=params, **kwargs)
         return r.json()
