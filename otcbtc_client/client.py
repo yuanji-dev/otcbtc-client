@@ -1,6 +1,7 @@
 # coding: utf-8
 
 from otcbtc_client.market import Market
+from otcbtc_client.order_book import OrderBook
 from otcbtc_client.ticker import Ticker
 
 
@@ -17,3 +18,7 @@ class OTCBTCClient(object):
     @property
     def ticker(self):
         return Ticker()
+
+    @property
+    def order_book(self):
+        return OrderBook()
