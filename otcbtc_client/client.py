@@ -30,7 +30,7 @@ class OTCBTCClient(object):
 
     @property
     def trade(self):
-        return Trade()
+        return Trade(self.api_key, self.api_secret)
 
     @property
     def timestamp(self):
