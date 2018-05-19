@@ -5,6 +5,7 @@ from otcbtc_client.order_book import OrderBook
 from otcbtc_client.ticker import Ticker
 from otcbtc_client.timestamp import Timestamp
 from otcbtc_client.trade import Trade
+from otcbtc_client.kline import Kline
 
 
 class OTCBTCClient(object):
@@ -32,3 +33,7 @@ class OTCBTCClient(object):
     @property
     def timestamp(self):
         return Timestamp()
+
+    @property
+    def kline(self):
+        return Kline()
