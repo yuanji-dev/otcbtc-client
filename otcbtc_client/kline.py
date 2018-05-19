@@ -13,3 +13,14 @@ class Kline(OTCBTCAPIBase):
         if timestamp:
             params.update(timestamp=timestamp)
         return self.get('/api/v2/klines', params=params)
+
+    def with_pending_trades(self, market, trade_id, limit=30, period=1, timestamp=None):
+        params =  {
+            'market': market,
+            'trade_id': trade_id,
+            'limit': limit,
+            'period': period
+        }
+        if timestamp:
+            params.update(timestamp=timestamp)
+        return self.get('/api/v2/klines_with_pending_trades', params=params)
