@@ -3,6 +3,7 @@
 from otcbtc_client.market import Market
 from otcbtc_client.order_book import OrderBook
 from otcbtc_client.ticker import Ticker
+from otcbtc_client.trade import Trade
 
 
 class OTCBTCClient(object):
@@ -22,3 +23,7 @@ class OTCBTCClient(object):
     @property
     def order_book(self):
         return OrderBook()
+
+    @property
+    def trade(self):
+        return Trade()
