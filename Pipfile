@@ -4,8 +4,13 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-requests = "*"
 
 [dev-packages]
+requests = "*"
 pylint = "*"
 rope = "*"
+pytest = "*"
+
+[scripts]
+
+test = "py.test tests/"
