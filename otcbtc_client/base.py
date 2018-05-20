@@ -2,6 +2,7 @@
 
 import hashlib
 import hmac
+from builtins import bytes
 
 import requests
 

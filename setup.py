@@ -15,5 +15,6 @@ setuptools.setup(
     ),
     install_requires=[
     'requests >=2.11, <3.0a0',
+    'future',
     ]
 )
