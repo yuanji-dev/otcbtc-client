@@ -9,6 +9,7 @@ name = "pypi"
 [dev-packages]
 pytest = "*"
 tox = "*"
+responses = "*"
 
 [scripts]
 test = "py.test tests/"

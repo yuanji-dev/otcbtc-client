@@ -4,5 +4,7 @@ from otcbtc_client.base import OTCBTCAPIBase
 
 class Market(OTCBTCAPIBase):
 
+    URI = '/api/v2/markets'
+
     def all(self):
-        return self.get('/api/v2/markets')
+        return self.get(self.URI)
