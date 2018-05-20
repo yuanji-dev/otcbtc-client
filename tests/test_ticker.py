@@ -42,7 +42,8 @@ class TestTicker(object):
                         'vol': '71236.11349855'
                     }
                 },
-            })
+            },
+            match_querystring=True)
         resp = ticker.all()
         assert 'btc_eth' in resp
         assert 'otb_eth' in resp
@@ -66,7 +67,8 @@ class TestTicker(object):
                     'vol':
                     '71236.11349855'  # Trade volume within last 24 hours
                 }
-            })
+            },
+            match_querystring=True)
         resp = ticker.fetch(market_id)
         assert 'ticker' in resp
         assert 'at' in resp

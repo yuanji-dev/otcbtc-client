@@ -3,6 +3,7 @@
 import responses
 
 from otcbtc_client.order_book import OrderBook
+from tests.helper import concat_url_and_params
 
 
 class TestOrderBook(object):
@@ -13,9 +14,12 @@ class TestOrderBook(object):
     @responses.activate
     def test_fetch(self):
         order_book = self.order_book
+        market = 'otbeth'
+        params = {'market': market, 'asks_limit': '1', 'bids_limit': '1'}
         responses.add(
             responses.GET,
-            order_book.build_url(order_book.URI),
+            concat_url_and_params(
+                order_book.build_url(order_book.URI), params),
             json={
                 'asks': [{
                     'id': 71468,  # Unique order id
@@ -51,8 +55,9 @@ class TestOrderBook(object):
                     'executed_volume': '4.0',
                     'trades_count': 1
                 }]
-            })
-        resp = order_book.fetch(market='otbeth', asks_limit=1, bids_limit=1)
+            },
+            match_querystring=True)
+        resp = order_book.fetch(market=market, asks_limit=1, bids_limit=1)
         assert 'asks' in resp
         assert 'bids' in resp
         assert len(resp['asks']) == 1

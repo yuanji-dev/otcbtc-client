@@ -37,7 +37,8 @@ class TestMarket(object):
                     'ticker_id': 'bch_eth',
                     'name': 'BCH/ETH'
                 },
-            ])
+            ],
+            match_querystring=True)
         resp = market.all()
         assert resp[0]
         assert resp[0]['id'] == 'otbeth'
