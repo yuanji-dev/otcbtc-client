@@ -10,6 +10,8 @@ name = "pypi"
 pytest = "*"
 tox = "*"
 responses = "*"
+codecov = "*"
+pytest-cov = "*"
 
 [scripts]
 test = "py.test tests/"
