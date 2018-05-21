@@ -2,13 +2,13 @@
 
 import responses
 
-from otcbtc_client.market import Market
+from otcbtc_client.client import OTCBTCClient
 
 
 class TestMarket(object):
     @property
     def market(self):
-        return Market()
+        return OTCBTCClient().market
 
     @responses.activate
     def test_all(self):

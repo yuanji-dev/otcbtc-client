@@ -4,18 +4,18 @@ import pytest
 import responses
 from requests.exceptions import ConnectionError
 
-from otcbtc_client.trade import Trade
+from otcbtc_client.client import OTCBTCClient
 from tests.helper import concat_url_and_params
 
 
 class TestTrade(object):
     @property
     def trade(self):
-        return Trade()
+        return OTCBTCClient().trade
 
     @property
     def trade_with_auth(self):
-        return Trade(api_key='xxx', api_secret='yyy')
+        return OTCBTCClient(api_key='xxx', api_secret='yyy').trade
 
     @responses.activate
     def test_fetch(self):

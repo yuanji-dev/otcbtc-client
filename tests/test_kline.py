@@ -2,14 +2,14 @@
 
 import responses
 
-from otcbtc_client.kline import Kline
+from otcbtc_client.client import OTCBTCClient
 from tests.helper import concat_url_and_params
 
 
 class TestKline(object):
     @property
     def kline(self):
-        return Kline()
+        return OTCBTCClient().kline
 
     @responses.activate
     def test_fetch(self):

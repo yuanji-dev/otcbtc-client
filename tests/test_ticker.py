@@ -2,13 +2,13 @@
 
 import responses
 
-from otcbtc_client.ticker import Ticker
+from otcbtc_client.client import OTCBTCClient
 
 
 class TestTicker(object):
     @property
     def ticker(self):
-        return Ticker()
+        return OTCBTCClient().ticker
 
     @responses.activate
     def test_all(self):

@@ -14,4 +14,4 @@ codecov = "*"
 pytest-cov = "*"
 
 [scripts]
-test = "py.test tests/"
+test = "py.test --cov-report term --cov=otcbtc_client tests/"

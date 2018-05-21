@@ -2,14 +2,14 @@
 
 import responses
 
-from otcbtc_client.order_book import OrderBook
+from otcbtc_client.client import OTCBTCClient
 from tests.helper import concat_url_and_params
 
 
 class TestOrderBook(object):
     @property
     def order_book(self):
-        return OrderBook()
+        return OTCBTCClient().order_book
 
     @responses.activate
     def test_fetch(self):

@@ -2,13 +2,13 @@
 
 import responses
 
-from otcbtc_client.timestamp import Timestamp
+from otcbtc_client.client import OTCBTCClient
 
 
 class TestTimestamp(object):
     @property
     def timestamp(self):
-        return Timestamp()
+        return OTCBTCClient().timestamp
 
     @responses.activate
     def test_timestamp(self):
