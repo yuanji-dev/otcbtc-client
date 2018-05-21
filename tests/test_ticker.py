@@ -10,6 +10,7 @@ class TestTicker(object):
     def ticker(self):
         return Ticker()
 
+    @responses.activate
     def test_all(self):
         ticker = self.ticker
         responses.add(
