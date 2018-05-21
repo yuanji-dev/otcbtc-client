@@ -2,10 +2,13 @@
 
 from otcbtc_client.base import OTCBTCAPIBase
 
+
 class User(OTCBTCAPIBase):
 
+    URI = '/api/v2/users/me'
+
     def fetch(self):
-        uri = '/api/v2/users/me'
+        uri = self.URI
         params = {
             'access_key': self.access_key,
         }
