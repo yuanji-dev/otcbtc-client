@@ -1,11 +1,17 @@
 import setuptools
+import os
+
+with open(os.path.join(os.path.dirname(__file__), "README.md"), "r") as f:
+    long_description = f.read()
 
 setuptools.setup(
     name='otcbtc_client',
-    version='0.1.0',
+    version='0.2.0',
     author='Gimo',
     author_email='self@gimo.me',
     description='OTCBTC SDK for Python',
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     url='https://github.com/masakichi/otcbtc-client',
     packages=setuptools.find_packages(exclude=['tests']),
     license='MIT',
