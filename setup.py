@@ -6,7 +6,7 @@ with open(os.path.join(os.path.dirname(__file__), "README.md"), "r") as f:
 
 setuptools.setup(
     name='otcbtc_client',
-    version='0.2.0',
+    version='0.2.1',
     author='Gimo',
     author_email='self@gimo.me',
     description='OTCBTC SDK for Python',
@@ -24,6 +24,7 @@ setuptools.setup(
                  'Programming Language :: Python :: 3.4',
                  'Programming Language :: Python :: 3.5',
                  'Programming Language :: Python :: 3.6',
+                 'Programming Language :: Python :: 3.7',
                  'Programming Language :: Python :: Implementation :: CPython',
                  'Programming Language :: Python :: Implementation :: PyPy'),
     install_requires=[
