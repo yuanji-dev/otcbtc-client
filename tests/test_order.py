@@ -14,10 +14,7 @@ class TestOrder(object):
     @responses.activate
     def test_list_order(self):
         order = self.order
-        market = 'otbeth'
         params = {
-            'market':
-            market,
             'id':
             1,
             'access_key':
@@ -49,7 +46,6 @@ class TestOrder(object):
                 'trades_count': 1  # Number of trades under this order
             })
         resp = order.list_order(id=1)
-        print(resp)
         assert resp['id'] == 1
 
     @responses.activate
